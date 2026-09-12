@@ -12,7 +12,7 @@ Build a polished, responsive education ecosystem website that positions EduHub42
 
 ## Brand and visual system
 - Use deep navy, teal/turquoise, white, and restrained light-grey surfaces with semantic design tokens.
-- Use the uploaded official logo unchanged once provided; no recreation or boxed logo treatment.
+- Use the uploaded official EduHub42 logo unchanged in the opening banner, compact sticky navigation, footer, and favicon; no recreation or boxed treatment.
 - Create a distinctive abstract education/pathway visual language using connected routes, progression marks, editorial typography, generous spacing, restrained cards, and purposeful motion.
 - Tell one visual story throughout: Learn → Grow → Succeed.
 
@@ -35,6 +35,6 @@ Build a polished, responsive education ecosystem website that positions EduHub42
 - Keep motion subtle and respect reduced-motion preferences.
 
 ## Inputs and external setup
-- **Logo:** Await the official EduHub42 logo upload before final visual verification.
+- **Logo:** The official EduHub42 logo has been supplied and will be used unchanged.
 - **Email:** Set up a sender domain owned by EduHub42. Email delivery begins once its DNS verification is complete.
 - **Form data:** Submission emails will contain entered details and attached documents; no separate database or admin dashboard is included.

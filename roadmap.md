@@ -1,8 +1,12 @@
 # Roadmap
 
-- [ ] Build the EduHub42 multi-page website and responsive navigation.
-- [ ] Use the official uploaded logo unchanged in the banner, sticky navigation, footer, and favicon.
-- [ ] Add validated booking, contact, partnership, and careers application forms.
+- [x] Build the EduHub42 multi-page website and responsive navigation.
+- [x] Use the official uploaded logo unchanged in the banner, sticky navigation, footer, and favicon.
+- [x] Add validated booking, contact, partnership, and careers application forms.
+- [ ] Fix build type error (contact page search param).
+- [ ] Restyle: white background, teal/turquoise + violet #34349E + gray, black accents, fun educational feel.
+- [ ] Make logo blend into the header like a watermark (no rectangle look).
+- [ ] Give each pillar (Learn, Enroll, Workforce) its own enquiry form.
+- [ ] Replace testimonials with the three real reviews (RockLove K, Gemima L, Anonymous).
 - [ ] Configure branded email delivery after sender-domain setup.
-- [ ] Add resources and SEO-ready article pages.
 - [ ] Verify accessibility, mobile and desktop layouts, links, and form states.

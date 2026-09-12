@@ -42,6 +42,8 @@ function HomePage() {
       <section className="hero-shell">
         <img src={heroImage} alt="Abstract open book forming connected pathways towards education and career growth" className="hero-image" width={1600} height={1104} />
         <div className="hero-overlay" />
+        <div aria-hidden className="hero-blob -right-24 top-24 size-96 bg-accent" />
+        <div aria-hidden className="hero-blob -bottom-32 left-1/3 size-80 bg-primary opacity-30" />
         <div className="page-container relative z-10 flex min-h-[35rem] items-center pb-20">
           <div className="max-w-3xl">
             <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.2em] text-accent">Education Development Enterprise</p>
@@ -129,7 +131,7 @@ function HomePage() {
         <div className="page-container">
           <p className="eyebrow">Community voices</p><h2 className="section-title mt-4">What Our Community Says</h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[ ["EduHub42 has made a meaningful difference in my academic journey.", "Student"], ["The support was clear, patient and focused on what my child needed most.", "Parent"], ["I felt more confident about my application process and the steps ahead.", "Prospective student"] ].map(([quote, role]) => <blockquote key={quote} className="border-t-2 border-accent pt-6"><MessageSquareQuote className="size-7 text-accent" /><p className="mt-5 font-display text-xl leading-8">“{quote}”</p><footer className="mt-5 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{role}</footer></blockquote>)}
+            {[ ["The Good News is that both students passed to the next grade. David got code 6 (70% from getting 40%) on Afrikaans — I’m very happy!", "RockLove K"], ["I got 17/50 in my term 1 control test. After getting assistance with EduHub42 I got 34/50 — I’m so grateful for the steady improvement.", "Gemima L"], ["My daughter was on the verge of failing the year. After getting the expert tutors at EduHub42, my daughter passed and is currently getting consistent tutoring with the EduHub42 monthly packages. Best tutoring services in Cape Town!", "Anonymous"] ].map(([quote, name]) => <blockquote key={name} className="border-t-2 border-accent pt-6"><MessageSquareQuote className="size-7 text-accent" /><p className="mt-5 font-display text-xl leading-8">“{quote}”</p><footer className="mt-5 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{name}</footer></blockquote>)}
           </div>
         </div>
       </section>

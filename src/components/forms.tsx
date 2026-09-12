@@ -53,6 +53,42 @@ export function BookingForm({ mode }: { mode: "guardian" | "self" }) {
   );
 }
 
+export function PillarForm({ pillarId, pillarName }: { pillarId: string; pillarName: string }) {
+  const { submitted, submit } = useSubmission();
+  if (submitted) return <SuccessState message="Thank you for contacting EduHub42. Our team will get back to you as soon as possible." />;
+  return (
+    <form onSubmit={submit} className="form-grid">
+      <Field id={`${pillarId}-name`} label="Full Name"><Input id={`${pillarId}-name`} name="name" autoComplete="name" required minLength={2} /></Field>
+      <Field id={`${pillarId}-email`} label="Email Address"><Input id={`${pillarId}-email`} name="email" type="email" autoComplete="email" required /></Field>
+      <Field id={`${pillarId}-phone`} label="Phone Number"><Input id={`${pillarId}-phone`} name="phone" type="tel" autoComplete="tel" required pattern="[0-9+() -]{8,}" /></Field>
+      {pillarId === "learn" && (<>
+        <Field id="learn-level" label="Grade/Level of Study"><Input id="learn-level" name="level" required /></Field>
+        <Field id="learn-subjects" label="Subject(s) Needed"><Input id="learn-subjects" name="subjects" required /></Field>
+        <Field id="learn-format" label="Preferred Format">
+          <select id="learn-format" name="format" className="form-select" required defaultValue="">
+            <option value="" disabled>Select a format</option><option>Online</option><option>In Person</option><option>Either</option>
+          </select>
+        </Field>
+      </>)}
+      {pillarId === "enroll" && (<>
+        <Field id="enroll-institution" label="Institution(s) of Interest"><Input id="enroll-institution" name="institution" required /></Field>
+        <Field id="enroll-qualification" label="Qualification / Programme"><Input id="enroll-qualification" name="qualification" required /></Field>
+        <Field id="enroll-intake" label="Intended Intake Year"><Input id="enroll-intake" name="intake" inputMode="numeric" pattern="20[0-9]{2}" required /></Field>
+      </>)}
+      {pillarId === "workforce" && (<>
+        <Field id="workforce-status" label="Current Status">
+          <select id="workforce-status" name="status" className="form-select" required defaultValue="">
+            <option value="" disabled>Select your status</option><option>Student</option><option>Graduate</option><option>Employed</option><option>Seeking work</option>
+          </select>
+        </Field>
+        <Field id="workforce-interest" label="Career Field of Interest"><Input id="workforce-interest" name="interest" required /></Field>
+      </>)}
+      <div className="sm:col-span-2"><Field id={`${pillarId}-details`} label="Tell us more"><Textarea id={`${pillarId}-details`} name="details" rows={4} /></Field></div>
+      <Button type="submit" size="lg" className="sm:col-span-2 sm:w-fit">Enquire about {pillarName}</Button>
+    </form>
+  );
+}
+
 export function ContactForm({ partnership = false }: { partnership?: boolean }) {
   const { submitted, submit } = useSubmission();
   if (submitted) return <SuccessState message="Thank you for contacting EduHub42. Our team will get back to you as soon as possible." />;

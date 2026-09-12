@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PillarForm } from "@/components/forms";
 import { pillars } from "@/lib/site-data";
 
 export const Route = createFileRoute("/pillars")({ head: () => ({ meta: [{ title: "Our Pillars | EduHub42 Education Ecosystem" }, { name: "description", content: "Explore EduHub Learn, EduHub Enroll and EduHub Workforce—connected pathways for learning, education access and career readiness." }, { property: "og:title", content: "Our Pillars | EduHub42 Education Ecosystem" }, { property: "og:description", content: "One ecosystem. Multiple pathways for learners and students." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: "/pillars" }] }), component: PillarsPage });

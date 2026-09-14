@@ -13,6 +13,7 @@ import {
 
 import heroImage from "@/assets/education-pathways.jpg";
 import { BookingForm, ContactForm } from "@/components/forms";
+import { HomeHighlights } from "@/components/home-highlights";
 import { SocialLinks } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -60,6 +61,8 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      <HomeHighlights />
 
       <section className="journey-strip border-b border-border bg-background py-7">
         <div className="page-container grid gap-3 md:grid-cols-3">

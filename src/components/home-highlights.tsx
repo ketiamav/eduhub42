@@ -54,7 +54,7 @@ export function HomeHighlights() {
           <div className="mt-7 flex items-center justify-between gap-4">
             <Button asChild variant="banner"><Link to="/resources/$slug" params={{ slug: article.slug }}>Read article <ArrowRight /></Link></Button>
             <div className="flex gap-2" aria-label={`Article ${active + 1} of ${articles.length}`}>
-              {articles.map((item, index) => <button key={item.slug} type="button" aria-label={`Show article ${index + 1}`} onClick={() => setActive(index)} className={`slide-dot ${index === active ? "slide-dot-active" : ""}`} />)}
+              {articles.map((item, index) => <Button key={item.slug} type="button" variant="ghost" size="icon" aria-label={`Show article ${index + 1}`} onClick={() => setActive(index)} className={`slide-dot ${index === active ? "slide-dot-active" : ""}`} />)}
             </div>
           </div>
         </article>

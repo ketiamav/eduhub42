@@ -13,6 +13,7 @@ import {
 
 import heroImage from "@/assets/education-pathways.jpg";
 import { BookingForm, ContactForm } from "@/components/forms";
+import { HomeHighlights } from "@/components/home-highlights";
 import { SocialLinks } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -42,8 +43,9 @@ function HomePage() {
       <section className="hero-shell">
         <img src={heroImage} alt="Abstract open book forming connected pathways towards education and career growth" className="hero-image" width={1600} height={1104} />
         <div className="hero-overlay" />
-        <div aria-hidden className="hero-blob -right-24 top-24 size-96 bg-accent" />
-        <div aria-hidden className="hero-blob -bottom-32 left-1/3 size-80 bg-primary opacity-30" />
+        <div aria-hidden className="hero-shape hero-shape-one" />
+        <div aria-hidden className="hero-shape hero-shape-two" />
+        <div aria-hidden className="hero-dots" />
         <div className="page-container relative z-10 flex min-h-[35rem] items-center pb-20">
           <div className="max-w-3xl">
             <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.2em] text-accent">Education Development Enterprise</p>
@@ -60,7 +62,9 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-background py-7">
+      <HomeHighlights />
+
+      <section className="journey-strip border-b border-border bg-background py-7">
         <div className="page-container grid gap-3 md:grid-cols-3">
           {[
             [GraduationCap, "I need academic support", "/book"],
@@ -68,7 +72,7 @@ function HomePage() {
             [BriefcaseBusiness, "I need career support", "/pillars"],
           ].map(([Icon, label, to]) => {
             const JourneyIcon = Icon as typeof GraduationCap;
-            return <Link key={label as string} to={to as "/book" | "/pillars"} className="flex items-center gap-4 rounded-md p-4 font-semibold transition-colors hover:bg-secondary"><JourneyIcon className="size-6 text-accent" /><span>{label as string}</span><ArrowRight className="ml-auto size-4 text-muted-foreground" /></Link>;
+            return <Link key={label as string} to={to as "/book" | "/pillars"} className="journey-link"><span className="journey-icon"><JourneyIcon className="size-6" /></span><span>{label as string}</span><ArrowRight className="ml-auto size-4 text-muted-foreground" /></Link>;
           })}
         </div>
       </section>
@@ -82,8 +86,8 @@ function HomePage() {
             <p className="mt-5 leading-7 text-muted-foreground">Our approach extends beyond traditional tutoring. We are developing an integrated education ecosystem designed to support learners across key stages of their academic, educational and professional journeys.</p>
             <Button asChild variant="outline" size="lg" className="mt-8"><Link to="/about">Discover our purpose <ArrowRight /></Link></Button>
           </div>
-          <div className="relative border-l border-border pl-8 md:pl-12">
-            {["LEARN", "GROW", "SUCCEED"].map((word, index) => <div key={word} className="flex items-baseline gap-5 border-b border-border py-6"><span className="text-sm font-bold text-accent">0{index + 1}</span><span className="font-display text-4xl font-bold text-primary md:text-5xl">{word}</span></div>)}
+          <div className="growth-stack">
+            {["LEARN", "GROW", "SUCCEED"].map((word, index) => <div key={word} className={`growth-word growth-word-${index + 1}`}><span>0{index + 1}</span><strong>{word}</strong></div>)}
           </div>
         </div>
       </section>
@@ -109,7 +113,7 @@ function HomePage() {
               ["02", "Develop", "Access the support, resources and guidance you need."],
               ["03", "Connect", "Access opportunities, institutions and pathways."],
               ["04", "Progress", "Move confidently towards your next stage."],
-            ].map(([number, title, text]) => <div key={number}><span className="text-sm font-extrabold text-accent">{number}</span><h3 className="mt-4 text-xl font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p></div>)}
+            ].map(([number, title, text]) => <div key={number} className="process-step"><span>{number}</span><h3>{title}</h3><p>{text}</p></div>)}
           </div>
         </div>
       </section>
@@ -131,7 +135,7 @@ function HomePage() {
         <div className="page-container">
           <p className="eyebrow">Community voices</p><h2 className="section-title mt-4">What Our Community Says</h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[ ["The Good News is that both students passed to the next grade. David got code 6 (70% from getting 40%) on Afrikaans — I’m very happy!", "RockLove K"], ["I got 17/50 in my term 1 control test. After getting assistance with EduHub42 I got 34/50 — I’m so grateful for the steady improvement.", "Gemima L"], ["My daughter was on the verge of failing the year. After getting the expert tutors at EduHub42, my daughter passed and is currently getting consistent tutoring with the EduHub42 monthly packages. Best tutoring services in Cape Town!", "Anonymous"] ].map(([quote, name]) => <blockquote key={name} className="border-t-2 border-accent pt-6"><MessageSquareQuote className="size-7 text-accent" /><p className="mt-5 font-display text-xl leading-8">“{quote}”</p><footer className="mt-5 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{name}</footer></blockquote>)}
+            {[ ["The Good News is that both students passed to the next grade. David got code 6 (70% from getting 40%) on Afrikaans — I’m very happy!", "RockLove K"], ["I got 17/50 in my term 1 control test. After getting assistance with EduHub42 I got 34/50 — I’m so grateful for the steady improvement.", "Gemima L"], ["My daughter was on the verge of failing the year. After getting the expert tutors at EduHub42, my daughter passed and is currently getting consistent tutoring with the EduHub42 monthly packages. Best tutoring services in Cape Town!", "Anonymous"] ].map(([quote, name], index) => <blockquote key={name} className={`testimonial-card testimonial-card-${index + 1}`}><MessageSquareQuote className="size-7 text-accent" /><p className="mt-5 font-display text-xl leading-8">“{quote}”</p><footer className="mt-5 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{name}</footer></blockquote>)}
           </div>
         </div>
       </section>

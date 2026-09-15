@@ -2,8 +2,7 @@ name: Deploy EduHub42 to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -27,13 +26,16 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 20
-          
+          package-manager-cache: false
 
       - name: Install dependencies
         run: npm install
 
       - name: Build
         run: npm run build
+
+      - name: List build output
+        run: ls -R ./.output/public || echo "FOLDER MISSING"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

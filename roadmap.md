@@ -11,5 +11,6 @@
 - [x] Shift the visual style to dark, elegant, and vibrant using only the logo's violet, teal, black, gray, and white.
 - [x] Add a blog slideshow near the top of the homepage.
 - [x] Add a newsletter signup option with persistent subscriptions.
+- [x] Refresh the homepage with a white palette, playful fonts, watermark logo, flowing resources, and end newsletter.
 - [ ] Configure branded email delivery after sender-domain setup.
 - [ ] Verify accessibility, mobile and desktop layouts, links, and form states.

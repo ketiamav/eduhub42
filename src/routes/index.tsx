@@ -13,7 +13,7 @@ import {
 
 import heroImage from "@/assets/education-pathways.jpg";
 import { BookingForm, ContactForm } from "@/components/forms";
-import { HomeHighlights } from "@/components/home-highlights";
+import { BlogSlideshow, NewsletterSignup } from "@/components/home-highlights";
 import { SocialLinks } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -62,7 +62,7 @@ function HomePage() {
         </div>
       </section>
 
-      <HomeHighlights />
+      <BlogSlideshow />
 
       <section className="journey-strip border-b border-border bg-background py-7">
         <div className="page-container grid gap-3 md:grid-cols-3">
@@ -159,6 +159,8 @@ function HomePage() {
       <section className="border-t border-border bg-primary py-12 text-primary-foreground">
         <div className="page-container flex flex-col items-start justify-between gap-6 md:flex-row md:items-center"><div><p className="text-xs font-bold uppercase tracking-[.16em] text-accent">Make an impact with us</p><h2 className="mt-2 font-display text-3xl font-bold">Join the EduHub42 team.</h2></div><Button asChild variant="banner" size="lg"><Link to="/careers">Explore Careers <ArrowRight /></Link></Button></div>
       </section>
+
+      <NewsletterSignup />
     </>
   );
 }

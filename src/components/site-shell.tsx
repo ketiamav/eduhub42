@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
-import logoAsset from "@/assets/eduhub42-gradient-word-logo.png.asset.json";
+import transparentLogo from "@/assets/eduhub42-logo-transparent.png";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -54,7 +54,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <header className={`site-header ${compact ? "site-header-compact" : ""}`}>
         <div className="site-header-inner">
           <Link to="/" aria-label="EduHub42 home" className="brand-link">
-            <img src={logoAsset.url} alt="EduHub42 — Learn, Grow, Succeed" className="brand-logo" />
+            <img src={transparentLogo} alt="EduHub42 — Learn, Grow, Succeed" className="brand-logo" />
           </Link>
           <nav aria-label="Primary navigation" className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => (
@@ -139,7 +139,7 @@ function Footer() {
     <footer className="footer-shell">
       <div className="page-container grid gap-12 py-14 lg:grid-cols-[1.3fr_1fr_1fr]">
         <div>
-          <img src={logoAsset.url} alt="EduHub42" className="h-auto w-52 brightness-0 invert" />
+          <img src={transparentLogo} alt="EduHub42" className="h-auto w-52 brightness-0 invert" />
           <p className="mt-5 max-w-sm text-sm leading-7 text-footer-muted">
             An Education Development Enterprise creating pathways across learning, education access and career readiness.
           </p>

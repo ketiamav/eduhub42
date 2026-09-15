@@ -34,9 +34,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        
-        name: List build output 
-        run: ls -R ./.output/public
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
